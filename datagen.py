@@ -38,7 +38,6 @@ def generate_data():
     data["employment"] = {}
     data["employment"]["title"] = fake.job().title()
 
-
     # Generate address data
     data["address"] = {}
     data["address"]["city"] = fake.city()
@@ -60,6 +59,26 @@ def generate_data():
     data["subscription"]["status"] = random.choice(["Active", "Inactive"])
     data["subscription"]["payment_method"] = random.choice(["Paypal", "Credit Card", "Direct Debit"])
     data["subscription"]["term"] = random.choice(["Monthly", "Annual"])
+
+    return data
+
+
+def simple_random_data():
+    data = {}
+    data["id"] = random.randint(1000, 9999)
+    # Generate uuid
+    data["uid"] = fake.uuid4()
+    # Generate password
+    data["password"] = fake.password()
+    # Generate first and last names
+    data["first_name"] = fake.first_name()
+    data["last_name"] = fake.last_name()
+    # Generate username
+    data["username"] = data["first_name"] + "." + data["last_name"].lower()
+    # Generate email
+    data["email"] = data["username"] + "@email.com"
+
+    data["gender"] = random.choice(["Male", "Female", "Non-binary"])
 
     return data
 
