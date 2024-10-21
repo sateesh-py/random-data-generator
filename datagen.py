@@ -12,7 +12,7 @@ def generate_data_1():
 
     dataf = []
 
-    for i in range(10000):
+    for i in range(1000):
         data = {}
         # Generate numeric id
         # Generate uuid
