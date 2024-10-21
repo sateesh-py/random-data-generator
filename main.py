@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 import uvicorn
-from datagen import generate_data,simple_random_data
+from datagen import generate_data,simple_random_data,generate_data_1
 
 app = FastAPI()
 
