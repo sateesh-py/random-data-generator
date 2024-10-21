@@ -6,6 +6,43 @@ import json
 # Create a faker instance
 fake = faker.Faker()
 
+def generate_data_1():
+    """Generates random data in the specified format"""
+
+    dataf = []
+
+    for i in range(10000):
+        data = {}
+        # Generate numeric id
+        # Generate uuid
+        data["uid"] = fake.uuid4()
+        # Generate password
+        # Generate first and last names
+        # Generate username
+        data["username"] = fake.first_name() + "." + fake.last_name().lower()
+        # Generate email
+        data["email"] = data["username"] + "@email.com"
+        # Generate avatar url using faker image url
+        # Randomly choose gender
+        data["gender"] = random.choice(["Male", "Female", "Non-binary"])
+        # Generate phone number
+        # Generate social security number (replace with any other identifier if needed)
+        # Generate date of birth
+        data["job_title"] = fake.job().title()
+        data["company"] = fake.company()
+        data["salary"] = random.randint(99999, 999999)
+
+
+        # Generate employment data
+
+        # Generate address data
+        data["country"] = fake.country()
+
+        dataf.append(data)
+
+    # Generate credit card data (replace with any other data if needed)
+
+    return pd.DataFrame(dataf).to_csv(index=False)
 
 def generate_data():
     """Generates random data in the specified format"""
