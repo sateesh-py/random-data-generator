@@ -2,6 +2,7 @@ import faker
 import random
 import datetime
 import json
+import pandas as pd
 
 # Create a faker instance
 fake = faker.Faker()
