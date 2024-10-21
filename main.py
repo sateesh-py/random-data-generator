@@ -11,6 +11,10 @@ async def redirect_to_docs():
     return RedirectResponse(url="/docs")
 
 
+@app.get('/data')
+async def random_data():
+    return generate_data_1()
+
 @app.get('/v2/random-data')
 def random_data():
     return generate_data()
