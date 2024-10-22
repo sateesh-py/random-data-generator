@@ -12,7 +12,7 @@ def generate_data_1():
 
     dataf = []
 
-    for i in range(1000):
+    for i in range(10000):
         data = {}
         # Generate numeric id
         # Generate uuid
@@ -43,7 +43,7 @@ def generate_data_1():
 
     # Generate credit card data (replace with any other data if needed)
 
-    return pd.DataFrame(dataf).to_csv(index=False)
+    return dataf
 
 def generate_data():
     """Generates random data in the specified format"""
