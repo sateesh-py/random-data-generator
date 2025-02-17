@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse,JSONResponse
 import uvicorn
 from datagen import generate_data,simple_random_data,generate_data_1
 
@@ -13,15 +13,15 @@ async def redirect_to_docs():
 
 @app.get('/data')
 async def random_data():
-    return generate_data_1()
+    return JSONResponse(generate_data_1(),media_type="Application/json; charset=utf-8")
 
 @app.get('/v2/random-data')
 def random_data():
-    return generate_data()
+    return JSONResponse(generate_data(),media_type="Application/json; charset=utf-8")
 
 @app.get('/v2/random/data')
 def small_random_data():
-    return simple_random_data()
+    return JSONResponse(simple_random_data(),media_type="Application/json; charset=utf-8")
 
 
 if __name__ == '__main__':
