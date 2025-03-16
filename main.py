@@ -23,6 +23,11 @@ def random_data():
 def small_random_data():
     return JSONResponse(simple_random_data(),media_type="Application/json; charset=utf-8")
 
+@app.get('/simple/data')
+def simple():
+    return JSONResponse(simple_data(),media_type="Application/json; charset=utf-8")
+
+
 
 if __name__ == '__main__':
     uvicorn.run(app)
