@@ -120,5 +120,21 @@ def simple_random_data():
 
     return data
 
+def simple_data():
+    data = {}
+    # Generate uuid
+    data["uid"] = fake.uuid4()
+    # Generate password
+    # Generate username
+    data["username"] = fake.first_name() + "." + fake.last_name().lower()
+    # Generate email
+    data["email"] = data["username"] + "@email.com"
+
+    data["gender"] = random.choice(["Male", "Female"])
+
+    data["salary"] = random.randint(50000, 99999)
+
+    return data
+
 
 print(type(generate_data()))
